@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace battleTest
+namespace BlueSeaBattle
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Challenge challenge = new Challenge();
+            challenge.GetChallenge();
         }
     }
 }
