@@ -6,8 +6,12 @@ namespace BlueSeaBattle
     {
         static void Main(string[] args)
         {
-            Challenge challenge = new Challenge();
-            challenge.GetChallenge();
+            while (true)
+            {
+                Challenge challenge = new Challenge();
+                challenge.GetChallenge();
+                Console.ReadLine();
+            }
         }
     }
 }

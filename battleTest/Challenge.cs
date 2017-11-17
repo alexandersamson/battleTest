@@ -24,16 +24,18 @@ namespace BlueSeaBattle
             int numberOne = 0;
             int numberTwo = 0;
             int solution = 0;
-            int usedOperator = getRandomNumber(4);
-            if (usedOperator < 3) // +, -, *
+            int usedOperator = getRandomNumber(this.operators.Count - 1);  //Random operator zoeken in de List
+            if (this.getOperator(usedOperator) == "+" ||        // +, -, *
+                this.getOperator(usedOperator) == "-" ||
+                this.getOperator(usedOperator) == "*")      
             {
                 numberOne = this.getRandomNumber(100);
                 numberTwo = this.getRandomNumber(100);
-                if (usedOperator == 0) // + addition
+                if (this.getOperator(usedOperator) == "+")      // + addition
                 {
                     solution = numberOne + numberTwo;
                 }
-                if (usedOperator == 1) // - substraction
+                if (this.getOperator(usedOperator) == "-")      // - substraction
                 {
                     if (numberOne < numberTwo)
                     {
@@ -43,13 +45,13 @@ namespace BlueSeaBattle
                     }
                     solution = numberOne - numberTwo;
                 }
-                if (usedOperator == 2) // * multiplation
+                if (this.getOperator(usedOperator) == "*")      // * multiplation
                 {
                     numberTwo /= 5;
                     solution = numberOne * numberTwo;
                 }
             }
-            else if (usedOperator == 3) // / Divide
+            else if (this.getOperator(usedOperator) == "/")     // / Divide
             {
                 numberOne = this.getRandomNumber(50) * 2;
                 numberTwo = this.getRandomNumber(24)+1;
@@ -59,7 +61,7 @@ namespace BlueSeaBattle
                 }
                 solution = numberOne / numberTwo;
             }
-            else if (usedOperator == 4) // % modulo
+            else if (this.getOperator(usedOperator) == "%")      // % modulo
             {
                 numberOne = this.getRandomNumber(100);
                 numberTwo = this.getRandomNumber(9)+1;
